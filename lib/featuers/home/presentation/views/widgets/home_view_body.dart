@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodgo/featuers/home/presentation/views/widgets/custom_home_app_bar.dart';
+import 'package:foodgo/featuers/home/presentation/views/widgets/custom_search_bar.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -14,6 +15,10 @@ class HomeViewBody extends StatelessWidget {
             child: SizedBox(),
           ),
           CustomHomeAppBar(),
+          SizedBox(
+            height: 20,
+          ),
+          CustomSearchBar(),
         ],
       ),
     );
