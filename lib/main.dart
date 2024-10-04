@@ -1,9 +1,11 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:foodgo/core/helper/on_generate_routes.dart';
 import 'package:foodgo/featuers/splash/presentation/views/splash_view.dart';
 
 void main() {
-  runApp(const FoodgoApp());
+  runApp(
+      DevicePreview(enabled: false, builder: (context) => const FoodgoApp()));
 }
 
 class FoodgoApp extends StatelessWidget {
@@ -11,8 +13,11 @@ class FoodgoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Roboto'),
       onGenerateRoute: onGenerateRoute,
       initialRoute: SplashView.routeName,
     );
