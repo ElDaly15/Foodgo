@@ -8,6 +8,17 @@ class ProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    // Adjust image height based on screen width
+    final imageHeight = screenWidth < 400 ? 80.0 : 120.0;
+
+    // Adjust padding and font size based on screen size
+    final paddingValue = screenWidth < 400 ? 8.0 : 10.0;
+    final titleFontSize = screenWidth < 400 ? 16.0 : 20.0;
+    final subtitleFontSize = screenWidth < 400 ? 14.0 : 18.0;
+    final ratingFontSize = screenWidth < 400 ? 14.0 : 18.0;
+
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -23,29 +34,35 @@ class ProductItem extends StatelessWidget {
       ),
       child: Column(
         children: [
+          // Adjust image size
           Image.asset(
             Assets.imagesBurger5,
+            height: imageHeight,
+            fit: BoxFit.cover,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: EdgeInsets.symmetric(horizontal: paddingValue),
             child: ListTile(
               contentPadding: EdgeInsets.zero,
               title: Text(
                 'Chesseburger',
                 style: TextStyles.font20Medium(context).copyWith(
                   color: const Color(0xff3C2F2F),
+                  fontSize: titleFontSize, // Adjust title font size
                 ),
               ),
               subtitle: Text(
                 'Wendy\'s Burger',
                 style: TextStyles.font18Regular(context).copyWith(
                   color: const Color(0xff3C2F2F),
+                  fontSize: subtitleFontSize, // Adjust subtitle font size
                 ),
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+            padding:
+                EdgeInsets.symmetric(horizontal: paddingValue, vertical: 4),
             child: Row(
               children: [
                 const Icon(
@@ -54,8 +71,10 @@ class ProductItem extends StatelessWidget {
                 ),
                 Text(
                   '4.9',
-                  style: TextStyles.font18Medium(context)
-                      .copyWith(color: const Color(0xff3C2F2F)),
+                  style: TextStyles.font18Medium(context).copyWith(
+                    color: const Color(0xff3C2F2F),
+                    fontSize: ratingFontSize, // Adjust rating font size
+                  ),
                 ),
                 const Spacer(),
                 const Icon(FontAwesomeIcons.heart),
