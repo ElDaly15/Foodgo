@@ -12,12 +12,12 @@ class ProductItem extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
 
     // Adjust image height based on screen width
-    final imageHeight = screenWidth < 400 ? 80.0 : 120.0;
+    final imageHeight = screenWidth < 400 ? 80.0 : 110.0;
 
     // Adjust padding and font size based on screen size
     final paddingValue = screenWidth < 400 ? 8.0 : 10.0;
-    final titleFontSize = screenWidth < 400 ? 16.0 : 20.0;
-    final subtitleFontSize = screenWidth < 400 ? 14.0 : 18.0;
+    final titleFontSize = screenWidth < 400 ? 16.0 : 18.0;
+    final subtitleFontSize = screenWidth < 400 ? 14.0 : 15.0;
     final ratingFontSize = screenWidth < 400 ? 14.0 : 18.0;
 
     return Container(
@@ -35,6 +35,7 @@ class ProductItem extends StatelessWidget {
       ),
       child: Column(
         children: [
+          const Spacer(),
           // Adjust image size
           Image.asset(
             productModel.image,
@@ -61,6 +62,7 @@ class ProductItem extends StatelessWidget {
               ),
             ),
           ),
+          const Spacer(),
           Padding(
             padding:
                 EdgeInsets.symmetric(horizontal: paddingValue, vertical: 4),
@@ -83,6 +85,7 @@ class ProductItem extends StatelessWidget {
               ],
             ),
           ),
+          const Spacer(),
         ],
       ),
     );

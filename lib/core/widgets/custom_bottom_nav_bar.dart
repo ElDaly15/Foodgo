@@ -35,17 +35,22 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               });
             },
           ),
-          _buildAnimatedNavItem(
-            icon: FontAwesomeIcons.user,
-            solidIcon: FontAwesomeIcons.solidUser,
-            isSelected: bottomNavIndex == 1,
-            onPressed: () {
-              setState(() {
-                widget.onTap(1);
-                bottomNavIndex = 1;
-              });
-            },
+          const Spacer(),
+          Padding(
+            padding: const EdgeInsets.only(right: 16),
+            child: _buildAnimatedNavItem(
+              icon: FontAwesomeIcons.user,
+              solidIcon: FontAwesomeIcons.solidUser,
+              isSelected: bottomNavIndex == 1,
+              onPressed: () {
+                setState(() {
+                  widget.onTap(1);
+                  bottomNavIndex = 1;
+                });
+              },
+            ),
           ),
+          const Spacer(),
           _buildAnimatedNavItem(
             icon: FontAwesomeIcons.message,
             solidIcon: FontAwesomeIcons.solidMessage,
@@ -57,6 +62,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               });
             },
           ),
+          const Spacer(),
           _buildAnimatedNavItem(
             icon: FontAwesomeIcons.heart,
             solidIcon: FontAwesomeIcons.solidHeart,
