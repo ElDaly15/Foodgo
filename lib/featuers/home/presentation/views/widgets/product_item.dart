@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:foodgo/core/utils/images.dart';
 import 'package:foodgo/core/utils/styles.dart';
+import 'package:foodgo/featuers/home/data/models/product_model.dart';
 
 class ProductItem extends StatelessWidget {
-  const ProductItem({super.key});
+  const ProductItem({super.key, required this.productModel});
+  final ProductModel productModel;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class ProductItem extends StatelessWidget {
         children: [
           // Adjust image size
           Image.asset(
-            Assets.imagesBurger5,
+            productModel.image,
             height: imageHeight,
             fit: BoxFit.cover,
           ),
@@ -45,14 +46,14 @@ class ProductItem extends StatelessWidget {
             child: ListTile(
               contentPadding: EdgeInsets.zero,
               title: Text(
-                'Chesseburger',
+                productModel.title,
                 style: TextStyles.font20Medium(context).copyWith(
                   color: const Color(0xff3C2F2F),
                   fontSize: titleFontSize, // Adjust title font size
                 ),
               ),
               subtitle: Text(
-                'Wendy\'s Burger',
+                productModel.subTitle,
                 style: TextStyles.font18Regular(context).copyWith(
                   color: const Color(0xff3C2F2F),
                   fontSize: subtitleFontSize, // Adjust subtitle font size
@@ -70,14 +71,15 @@ class ProductItem extends StatelessWidget {
                   color: Color(0xffFF9633),
                 ),
                 Text(
-                  '4.9',
+                  productModel.rating,
                   style: TextStyles.font18Medium(context).copyWith(
                     color: const Color(0xff3C2F2F),
                     fontSize: ratingFontSize, // Adjust rating font size
                   ),
                 ),
                 const Spacer(),
-                const Icon(FontAwesomeIcons.heart),
+                InkWell(
+                    onTap: () {}, child: const Icon(FontAwesomeIcons.heart)),
               ],
             ),
           ),

@@ -4,7 +4,8 @@ import 'package:foodgo/core/helper/on_generate_routes.dart';
 import 'package:foodgo/featuers/splash/presentation/views/splash_view.dart';
 
 void main() {
-  runApp(DevicePreview(enabled: true, builder: (context) => const FoodgoApp()));
+  runApp(
+      DevicePreview(enabled: false, builder: (context) => const FoodgoApp()));
 }
 
 class FoodgoApp extends StatelessWidget {

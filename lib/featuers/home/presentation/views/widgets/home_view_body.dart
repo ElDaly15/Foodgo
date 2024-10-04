@@ -41,11 +41,11 @@ class HomeViewBody extends StatelessWidget {
         SliverToBoxAdapter(child: CustomCategoryListView()),
         SliverToBoxAdapter(
           child: SizedBox(
-            height: 30,
+            height: 20,
           ),
         ),
         SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             sliver: CustomSliverGridView()),
       ],
     );
