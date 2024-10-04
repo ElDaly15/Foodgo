@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodgo/featuers/home/presentation/views/widgets/custom_category_list_view.dart';
 import 'package:foodgo/featuers/home/presentation/views/widgets/custom_home_app_bar.dart';
 import 'package:foodgo/featuers/home/presentation/views/widgets/custom_search_bar.dart';
 
@@ -7,20 +8,37 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        children: [
-          SafeArea(
+    return const CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: SafeArea(
             child: SizedBox(),
           ),
-          CustomHomeAppBar(),
-          SizedBox(
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: CustomHomeAppBar(),
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: SizedBox(
             height: 20,
           ),
-          CustomSearchBar(),
-        ],
-      ),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: CustomSearchBar(),
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 20,
+          ),
+        ),
+        SliverToBoxAdapter(child: CustomCategoryListView()),
+      ],
     );
   }
 }
