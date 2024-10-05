@@ -17,6 +17,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
     return BottomAppBar(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       height: 60,
+      shadowColor: Colors.transparent,
       color: const Color(0xffEF2A39),
       shape: const CircularNotchedRectangle(),
       notchMargin: 10,
@@ -96,6 +97,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
             },
             child: Icon(
               isSelected ? solidIcon : icon,
+              size: 20,
               key: ValueKey<bool>(isSelected),
               color: Colors.white,
             ),

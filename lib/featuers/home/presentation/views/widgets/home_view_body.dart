@@ -13,7 +13,7 @@ class HomeViewBody extends StatelessWidget {
       slivers: [
         SliverToBoxAdapter(
           child: SizedBox(
-            height: 30,
+            height: 35,
           ),
         ),
         SliverToBoxAdapter(
