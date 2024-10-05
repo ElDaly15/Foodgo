@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodgo/core/utils/styles.dart';
 import 'package:foodgo/featuers/home/data/models/product_model.dart';
 import 'package:foodgo/featuers/product/presentation/views/widgets/custom_column_of_slider.dart';
+import 'package:foodgo/featuers/product/presentation/views/widgets/portion_of_burgers.dart';
 
 class CustomProductForBurger extends StatefulWidget {
   const CustomProductForBurger({super.key, required this.productModel});
@@ -64,15 +65,15 @@ class _CustomProductForBurgerState extends State<CustomProductForBurger> {
         const SizedBox(
           height: 10,
         ),
-        Text(
-          'Spicy',
-          style: TextStyles.font24Medium(context)
-              .copyWith(color: const Color(0xff3C2F2F)),
+        const Row(
+          children: [
+            Flexible(child: CustomColumnOfSlider()),
+            SizedBox(
+              width: 50,
+            ),
+            PortionOfProducts(),
+          ],
         ),
-        const SizedBox(
-          height: 10,
-        ),
-        const CustomColumnOfSlider(),
       ],
     );
   }
