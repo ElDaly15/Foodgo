@@ -10,16 +10,16 @@ class ProductViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
+    return SingleChildScrollView(
       child: Column(
         children: [
           const SafeArea(
-            child: SizedBox(
-              height: 0,
-            ),
+            child: SizedBox(),
           ),
-          const CustomAppBarForProductView(),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12),
+            child: CustomAppBarForProductView(),
+          ),
           CustomProductForBurger(
             productModel: productModel,
           ),
