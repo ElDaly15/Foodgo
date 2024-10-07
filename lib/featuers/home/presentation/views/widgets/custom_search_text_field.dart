@@ -17,28 +17,41 @@ class CustomSearchTextField extends StatelessWidget {
           offset: const Offset(0, 0), // changes position of shadow
         )
       ]),
-      child: TextField(
-        decoration: InputDecoration(
-          fillColor: Colors.white,
-          filled: true,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(14),
-            borderSide: BorderSide.none,
+      child: Theme(
+        data: Theme.of(context).copyWith(
+          textSelectionTheme: TextSelectionThemeData(
+            selectionColor: const Color(0xff3C2F2F)
+                .withOpacity(0.5), // Color for the selected text
+            selectionHandleColor:
+                const Color(0xff3C2F2F), // Color for the selection handles
           ),
-          hintText: 'Search',
-          hintStyle: TextStyles.font20Medium(context).copyWith(
-            color: const Color(0xff3C2F2F),
-          ),
-          prefixIcon: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
-            child: SizedBox(
-              child: Image.asset(
-                Assets.imagesSearch,
+        ),
+        child: TextField(
+          decoration: InputDecoration(
+            fillColor: Colors.white,
+            filled: true,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(14),
+              borderSide: BorderSide.none,
+            ),
+            hintText: 'Search',
+            hintStyle: TextStyles.font20Medium(context).copyWith(
+              color: const Color(0xff3C2F2F),
+            ),
+            prefixIcon: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: SizedBox(
+                child: Image.asset(
+                  Assets.imagesSearch,
+                ),
               ),
             ),
           ),
+          cursorColor: const Color(0xff3C2F2F),
+          style: TextStyles.font18SemiBold(context).copyWith(
+            color: const Color(0xff3C2F2F),
+          ),
         ),
-        cursorColor: const Color(0xff3C2F2F),
       ),
     );
   }

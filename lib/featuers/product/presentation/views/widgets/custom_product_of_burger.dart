@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:foodgo/core/utils/styles.dart';
-import 'package:foodgo/core/widgets/list_of_topings.dart';
 import 'package:foodgo/featuers/home/data/models/product_model.dart';
 import 'package:foodgo/featuers/product/presentation/views/widgets/custom_column_of_slider.dart';
-import 'package:foodgo/featuers/product/presentation/views/widgets/custom_container_of_addons_and_side_options.dart';
+import 'package:foodgo/featuers/product/presentation/views/widgets/list_view_of_side_options.dart';
+import 'package:foodgo/featuers/product/presentation/views/widgets/list_view_of_toppings.dart';
 import 'package:foodgo/featuers/product/presentation/views/widgets/portion_of_burgers.dart';
 
 class CustomProductForBurger extends StatefulWidget {
@@ -103,24 +103,7 @@ class _CustomProductForBurgerState extends State<CustomProductForBurger> {
           const SizedBox(
             height: 20,
           ),
-          SizedBox(
-            height: 150,
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: topings.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: index == topings.length - 1
-                        ? const EdgeInsets.only(right: 12)
-                        : index == 0
-                            ? const EdgeInsets.only(left: 12, right: 30)
-                            : const EdgeInsets.only(right: 30),
-                    child: CustomContainerForToppingsAndSideOptions(
-                      topingsModel: topings[index],
-                    ),
-                  );
-                }),
-          ),
+          const ListViewOfToppings(),
           const SizedBox(
             height: 10,
           ),
@@ -135,24 +118,7 @@ class _CustomProductForBurgerState extends State<CustomProductForBurger> {
           const SizedBox(
             height: 20,
           ),
-          SizedBox(
-            height: 150,
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: sideOptions.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: index == sideOptions.length - 1
-                        ? const EdgeInsets.only(right: 12)
-                        : index == 0
-                            ? const EdgeInsets.only(left: 12, right: 30)
-                            : const EdgeInsets.only(right: 30),
-                    child: CustomContainerForToppingsAndSideOptions(
-                      topingsModel: sideOptions[index],
-                    ),
-                  );
-                }),
-          ),
+          const ListViewOfSideOptions(),
           const SizedBox(
             height: 20,
           ),
