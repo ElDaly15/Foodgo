@@ -37,7 +37,7 @@ List<ProductModel> products = [
       productInfo:
           'Indulge in our crispy and savory Fried Chicken Burger, made with a juicy chicken patty, hand-breaded and deep-fried to perfection, served on a warm bun with lettuce, tomato, and a creamy sauce.',
       timeOfProductCooking: '14 mins',
-      price: r'26.99'),
+      price: r'$26.99'),
   ProductModel(
       title: 'Hamburger ',
       subTitle: 'Chicken Burger',
@@ -55,7 +55,7 @@ List<ProductModel> products = [
       productInfo:
           'Indulge in our crispy and savory Fried Chicken Burger, made with a juicy chicken patty, hand-breaded and deep-fried to perfection, served on a warm bun with lettuce, tomato, and a creamy sauce.',
       timeOfProductCooking: '14 mins',
-      price: r'26.99'),
+      price: r'$26.99'),
   ProductModel(
       title: 'Hamburger ',
       subTitle: 'Veggie Burger',

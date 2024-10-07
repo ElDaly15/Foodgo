@@ -11,7 +11,7 @@ class ToppingsAndSideOptionsRow extends StatelessWidget {
       child: SizedBox(
         width: 140,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
