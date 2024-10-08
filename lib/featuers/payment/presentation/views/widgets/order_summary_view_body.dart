@@ -3,6 +3,7 @@ import 'package:foodgo/core/utils/images.dart';
 import 'package:foodgo/core/utils/styles.dart';
 import 'package:foodgo/featuers/home/data/models/product_model.dart';
 import 'package:foodgo/featuers/payment/presentation/views/widgets/order_details_summary.dart';
+import 'package:foodgo/featuers/payment/presentation/views/widgets/pay_now.dart';
 import 'package:foodgo/featuers/payment/presentation/views/widgets/payment_item.dart';
 import 'package:foodgo/featuers/payment/presentation/views/widgets/row_of_save_cards.dart';
 import 'package:foodgo/featuers/payment/presentation/views/widgets/total_info.dart';
@@ -118,6 +119,12 @@ class _OrderSummaryViewBodyState extends State<OrderSummaryViewBody> {
           padding: EdgeInsets.symmetric(horizontal: 5),
           child: RowOfSaveCardsWidget(),
         ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          child: PayNow(
+              price: widget.productModel.price,
+              productModel: widget.productModel),
+        )
       ],
     );
   }
