@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:foodgo/core/utils/styles.dart';
+import 'package:foodgo/featuers/home/data/models/product_model.dart';
+import 'package:foodgo/featuers/payment/presentation/views/order_summary_view.dart';
 
 class OrderInfo extends StatelessWidget {
-  const OrderInfo({super.key, required this.price});
+  const OrderInfo({super.key, required this.price, required this.productModel});
   final String price;
+  final ProductModel productModel;
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -34,7 +37,13 @@ class OrderInfo extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return OrdersSummaryView(
+                  productModel: productModel,
+                );
+              }));
+            },
             child: Text(
               'Order Now!',
               style: TextStyles.font18Medium(context)

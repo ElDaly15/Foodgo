@@ -32,6 +32,7 @@ class ProductViewBody extends StatelessWidget {
               horizontal: 12,
             ),
             child: OrderInfo(
+              productModel: productModel,
               price: productModel.price,
             ),
           ),
